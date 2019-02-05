@@ -115,7 +115,7 @@ def create_env(spec, force_recreation=False, extra_channels=()):
             index = get_index(extra_channels)
             # Ditto re the quietness.
             r = Resolve(index)
-            full_list_of_packages = sorted(r.solve(list(spec)))
+            full_list_of_packages = r.solve(list(spec))
 
             # Put out a newline. Conda's solve doesn't do it for us.
             log.info('\n')
